@@ -1,16 +1,58 @@
-# React + Vite
+# React Hooks Practice
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+フィヨルドブートキャンプのプラクティス「React Hooks」で作成したアプリケーションです。
 
-Currently, two official plugins are available:
+GitHub のユーザーIDを入力すると、GitHub API から取得したユーザー情報を表示します。
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 機能
 
-## React Compiler
+- GitHub ユーザー情報の取得
+- ローディング状態の表示
+- エラーハンドリング
+- 入力値が空の場合は送信を無効化
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 使用技術
 
-## Expanding the ESLint configuration
+- React
+- Vite
+- React Hooks
+  - useState
+  - useEffect
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## カスタムフック
+
+GitHub API との通信処理をカスタムフックとして実装しています。
+
+```js
+const { userInfo, loading, error } = useUserInfo(userId);
+```
+
+## 学習内容
+
+このプラクティスでは以下を学習しました。
+
+- useState を使った状態管理
+- useEffect を使った副作用処理
+- カスタムフックによるロジックの分離
+- API 通信
+- 条件レンダリング
+- 制御コンポーネントによるフォーム管理
+
+## セットアップ
+
+```bash
+npm install
+npm run dev
+```
+
+## 使用した GitHub API
+
+```txt
+https://api.github.com/users/{username}
+```
+
+## 参考
+
+以下を参考に、GitHub API を利用したユーザー情報取得アプリを実装しました。
+
+- [JavaScript Primer - ユースケース: Ajax通信](https://jsprimer.net/use-case/ajaxapp/)
